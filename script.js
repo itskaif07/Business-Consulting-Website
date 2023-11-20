@@ -90,7 +90,7 @@ gsap.from('#sixhead, #sixbody', {
   },
 })
 
-gsap.from('#sevenleft, #sevenright', {
+gsap.from('#sevenleft, #sevenright, #scrollToTop', {
   opacity: 0,
   x: -100,
   duration:0.5,
@@ -102,4 +102,8 @@ gsap.from('#sevenleft, #sevenright', {
     start: 'top 50%',
     end: 'bottom 100%',
   },
+})
+
+document.querySelector('#scrollToTop').addEventListener('click', function(){
+  gsap.to(window, { duration: 1, scrollTo: { y: 0 }, ease: 'Expo.easeIn' });
 })
